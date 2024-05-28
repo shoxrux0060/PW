@@ -1,15 +1,22 @@
 import axios from "axios";
 
-const baseURL = 'https://cbu.uz/ru/arkhiv-kursov-valyut/json/'
+const baseURL = 'https://cp.1pay.uz/ru/'
 
-export const api = axios.create({
+export const AxiosInstance = axios.create({
   baseURL
 });
 
+AxiosInstance.interceptors.request.use(request => {
+  // const token = Cookies.get("token");
+  // request.headers["Authorization"] = `Bearer ${token}`;
+  // request.headers["device-type"] = "WEB";
+  return request;
+});
+
 export const axiosBaseQuery = (baseUrl = '') =>
-    async ({url='', method, data, params}) => {
+    async ({url='', method, data, params,...props}) => {
       try {
-        const result = await api({url: baseUrl + url, method, data, params})
+        const result = await AxiosInstance({url: baseUrl + url, method, data, params,...props})
         return {data: result.data}
       } catch (axiosError) {
         let err = axiosError
