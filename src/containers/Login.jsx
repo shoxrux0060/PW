@@ -3,7 +3,7 @@ import {createUseStyles} from "react-jss";
 import logo from "./../assest/img/logo.png"
 import {useUPostMMutation} from "../rtk/universalApi";
 import {Button, Form, Input} from 'antd';
-import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import {EyeInvisibleOutlined, EyeTwoTone, LockOutlined, UserOutlined} from '@ant-design/icons';
 import {useHistory} from "react-router-dom";
 import {failureNotify, successNotify} from "../notifications";
 
@@ -35,6 +35,17 @@ const useStyles = createUseStyles({
   },
   link: {
     marginBottom: '1rem',
+  },
+  "@media (max-width: 599px)": {
+    main: {
+      width: '399px',
+      padding: '1rem',
+    },
+    logo: {
+      objectFit: 'contain',
+      width: '196px',
+      height: '208px'
+    },
   },
 });
 
@@ -98,8 +109,9 @@ export const Login = () => {
               },
             ]}
           >
-            <Input
+            <Input.Password
               prefix={<LockOutlined/>}
+              iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
               type="password"
               placeholder="Введите пароль"
             />
