@@ -62,7 +62,7 @@ export const Login = () => {
         failureNotify(responseData?.message)
       }
     }
-  }, [isSuccess, responseData]);
+  }, [history, isSuccess, responseData]);
 
   const onFinish = (values) => {
     loginUser(({
