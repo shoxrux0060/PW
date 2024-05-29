@@ -21,7 +21,6 @@ const useStyles = createUseStyles({
   },
   main: {
     width: '532px',
-    padding: '1rem',
   },
   logo: {
     objectFit: 'contain',
@@ -34,12 +33,11 @@ const useStyles = createUseStyles({
     marginBottom: '3rem',
   },
   link: {
-    marginBottom: '1rem',
+    marginBottom: '0.5rem',
   },
   "@media (max-width: 599px)": {
     main: {
-      width: '399px',
-      padding: '1rem',
+      width: '340px',
     },
     logo: {
       objectFit: 'contain',
@@ -117,7 +115,7 @@ export const Login = () => {
             />
           </Form.Item>
           <div className={classes.link}>
-            <a href="#">Забыли пароль?</a>
+            <a href="/#">Забыли пароль?</a>
           </div>
           <Form.Item>
             <Button type="primary" htmlType="submit" block loading={isLoading}>
