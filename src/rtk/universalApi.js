@@ -1,8 +1,8 @@
 import {createApi} from '@reduxjs/toolkit/query/react'
 import {axiosBaseQuery} from "../axios/axios";
 
-const buildQuery = (method:string, v:any) => v.query({query: (v:any) =>  ({method, ...v})});
-const buildMutation = (method:string, v:any) => v.mutation({query: (v:any) => ({method, ...v})});
+const buildQuery = (method, v) => v.query({query: (v) =>  ({method, ...v})});
+const buildMutation = (method, v) => v.mutation({query: (v) => ({method, ...v})});
 
 export const universalApi = createApi({
   reducerPath: 'universal',

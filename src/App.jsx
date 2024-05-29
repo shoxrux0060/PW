@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
-import './MainStyles';
 import {Provider} from "react-redux";
 import {store} from "./store/store";
 import {ConfigProvider} from "antd";

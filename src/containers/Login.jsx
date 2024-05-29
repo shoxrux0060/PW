@@ -3,9 +3,9 @@ import {createUseStyles} from "react-jss";
 import logo from "./../assest/img/logo.png"
 import {useUPostMMutation} from "../rtk/universalApi";
 import {Button, Form, Input} from 'antd';
-import {UserOutlined, LockOutlined} from '@ant-design/icons';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import {useHistory} from "react-router-dom";
-import {errorNotify, failureNotify, successNotify} from "../notifications";
+import {failureNotify, successNotify} from "../notifications";
 
 var md5 = require('md5');
 
